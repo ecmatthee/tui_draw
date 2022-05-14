@@ -2,7 +2,12 @@
 name = "tui_draw"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+description = "TUI drawing library"
+documentation = "https://docs.rs/tui_draw"
+homepage = "https://github.com/ecmatthee/tui_draw"
+readme = "readme.md"
+repository = "https://github.com/ecmatthee/tui_draw"
+license = "Apache-2.0"
 
 [dependencies]
+crossterm = "0.23.2"
