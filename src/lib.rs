@@ -32,7 +32,7 @@ impl Rectangle {
 
         // Check if drawing will on current terminal screen size
         if (self.origin.0 + col > term_max.0) || (self.origin.1 + row > term_max.1) {
-            // TODO Error message
+            // TODO Error handling
             return Ok(());
         };
 
