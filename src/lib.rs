@@ -10,12 +10,15 @@ pub struct Rectangle {
     pub origin: (u16, u16),
     pub size_col: u16,
     pub size_row: u16,
-    pub char_top_left: String,
-    pub char_top_right: String,
-    pub char_bottom_left: String,
-    pub char_bottom_right: String,
-    pub char_horizontal: String,
-    pub char_verticle: String,
+    pub char_corner_top_left: String,
+    pub char_corner_top_right: String,
+    pub char_corner_bottom_left: String,
+    pub char_corner_bottom_right: String,
+    pub char_horizontal_top: String,
+    pub char_horizontal_bottom: String,
+    pub char_verticle_left: String,
+    pub char_verticle_right: String,
+    pub char_fill: String,
 }
 
 impl Rectangle {
@@ -40,46 +43,46 @@ impl Rectangle {
         for x in 1..col {
             stdout.queue(cursor::MoveTo(self.origin.0 + x, self.origin.1))?;
             stdout.queue(style::PrintStyledContent(
-                self.char_horizontal.clone().magenta(),
+                self.char_horizontal_top.clone().magenta(),
             ))?;
 
             stdout.queue(cursor::MoveTo(self.origin.0 + x, self.origin.1 + row))?;
             stdout.queue(style::PrintStyledContent(
-                self.char_horizontal.clone().magenta(),
+                self.char_horizontal_bottom.clone().magenta(),
             ))?;
         }
 
         for y in 1..row {
             stdout.queue(cursor::MoveTo(self.origin.0, self.origin.1 + y))?;
             stdout.queue(style::PrintStyledContent(
-                self.char_verticle.clone().magenta(),
+                self.char_verticle_left.clone().magenta(),
             ))?;
 
             stdout.queue(cursor::MoveTo(self.origin.0 + col, self.origin.1 + y))?;
             stdout.queue(style::PrintStyledContent(
-                self.char_verticle.clone().magenta(),
+                self.char_verticle_right.clone().magenta(),
             ))?;
         }
 
         // Corners
         stdout.queue(cursor::MoveTo(self.origin.0, self.origin.1))?;
         stdout.queue(style::PrintStyledContent(
-            self.char_top_left.clone().magenta(),
+            self.char_corner_top_left.clone().magenta(),
         ))?;
 
         stdout.queue(cursor::MoveTo(self.origin.0 + col, self.origin.1))?;
         stdout.queue(style::PrintStyledContent(
-            self.char_top_right.clone().magenta(),
+            self.char_corner_top_right.clone().magenta(),
         ))?;
 
         stdout.queue(cursor::MoveTo(self.origin.0, self.origin.1 + row))?;
         stdout.queue(style::PrintStyledContent(
-            self.char_bottom_left.clone().magenta(),
+            self.char_corner_bottom_left.clone().magenta(),
         ))?;
 
         stdout.queue(cursor::MoveTo(self.origin.0 + col, self.origin.1 + row))?;
         stdout.queue(style::PrintStyledContent(
-            self.char_bottom_right.clone().magenta(),
+            self.char_corner_bottom_right.clone().magenta(),
         ))?;
 
         Ok(())
