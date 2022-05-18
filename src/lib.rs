@@ -19,15 +19,15 @@ pub struct Rectangle {
     pub origin: (u16, u16),
     pub size_col: u16,
     pub size_row: u16,
-    pub char_corner_top_left: String,
-    pub char_corner_top_right: String,
-    pub char_corner_bottom_left: String,
-    pub char_corner_bottom_right: String,
-    pub char_horizontal_top: String,
-    pub char_horizontal_bottom: String,
-    pub char_verticle_left: String,
-    pub char_verticle_right: String,
-    pub char_fill: String,
+    pub char_corner_top_left: char,
+    pub char_corner_top_right: char,
+    pub char_corner_bottom_left: char,
+    pub char_corner_bottom_right: char,
+    pub char_horizontal_top: char,
+    pub char_horizontal_bottom: char,
+    pub char_verticle_left: char,
+    pub char_verticle_right: char,
+    pub char_fill: char,
 }
 
 impl Rectangle {
@@ -113,7 +113,7 @@ impl Rectangle {
 pub struct Line {
     start_point: (u16, u16),
     end_point: (u16, u16),
-    char_line: String,
+    char_line: char,
 }
 
 impl Line {
