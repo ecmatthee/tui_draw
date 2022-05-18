@@ -9,8 +9,9 @@
 use crossterm::{
     cursor,
     style::{self, Stylize},
-    terminal, QueueableCommand, Result,
+    terminal, QueueableCommand,
 };
+use std::io;
 use std::io::stdout;
 
 pub struct Rectangle {
@@ -30,7 +31,7 @@ pub struct Rectangle {
 }
 
 impl Rectangle {
-    pub fn draw(&self) -> Result<()> {
+    pub fn draw(&self) -> io::Result<()> {
         let mut stdout = stdout();
 
         let col = self.size_col - 1;
@@ -96,15 +97,32 @@ impl Rectangle {
         Ok(())
     }
 
-    pub fn fill(&self) -> Result<()> {
+    pub fn fill(&self) -> io::Result<()> {
         todo!();
     }
 
-    pub fn erase(&self) -> Result<()> {
+    pub fn erase(&self) -> io::Result<()> {
         todo!();
     }
 
-    pub fn erase_fill(&self) -> Result<()> {
+    pub fn erase_fill(&self) -> io::Result<()> {
+        todo!();
+    }
+}
+
+pub struct Line {
+    start_point: (u16, u16),
+    end_point: (u16, u16),
+    char_line: String,
+}
+
+impl Line {
+    // add code here
+    pub fn draw(&self) -> io::Result<()> {
+        todo!();
+    }
+
+    pub fn erase(&self) -> io::Result<()> {
         todo!();
     }
 }
