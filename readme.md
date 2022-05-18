@@ -1,5 +1,9 @@
 # tui_draw
 
+**The `tui_draw` crate is deprecated and no longer maintained. The GitHub repository will
+be archived soon. All the code is being moved to the `rillo`
+[crate](https://github.com/ecmatthee/rillo).**
+
 tui_draw provides various tools to design and draw TUI's. 
 
 
